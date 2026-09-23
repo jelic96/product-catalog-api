@@ -1,0 +1,51 @@
+@ProductCatalogApi_HostAddress = http://localhost:5023
+
+### List all products
+GET {{ProductCatalogApi_HostAddress}}/api/products
+Accept: application/json
+
+### Get one existing product
+GET {{ProductCatalogApi_HostAddress}}/api/products/1
+Accept: application/json
+
+### Create a product
+POST {{ProductCatalogApi_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Mechanical Keyboard",
+  "description": "Compact mechanical keyboard with backlight.",
+  "price": 89.99,
+  "category": "Electronics",
+  "stockQuantity": 15
+}
+
+### Update an existing product
+PUT {{ProductCatalogApi_HostAddress}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Wireless Headphones Pro",
+  "description": "Updated noise-cancelling Bluetooth headphones.",
+  "price": 99.99,
+  "category": "Electronics",
+  "stockQuantity": 20
+}
+
+### Delete an existing product
+DELETE {{ProductCatalogApi_HostAddress}}/api/products/2
+
+### Verify global error handling: should return 404
+GET {{ProductCatalogApi_HostAddress}}/api/products/999
+Accept: application/json
+
+### Verify validation: should return 400
+POST {{ProductCatalogApi_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": -5,
+  "category": "",
+  "stockQuantity": -1
+}

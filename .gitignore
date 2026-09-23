@@ -1,0 +1,12 @@
+# Build output
+bin/
+obj/
+
+# User-specific IDE files
+.vs/
+*.user
+*.suo
+
+# Local secrets and environment overrides
+appsettings.Local.json
+.env
