@@ -24,6 +24,3 @@ REST API for managing product catalog data.
 
 ## Middleware
 The API uses exception handling, HTTPS redirection, authentication, and authorization middleware.
-
-## Copilot usage
-Microsoft Copilot was used to assist with code suggestions, debugging, and middleware implementation. All suggestions were reviewed and tested before use.
